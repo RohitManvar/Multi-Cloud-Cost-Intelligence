@@ -1,0 +1,243 @@
+<svg viewBox="0 0 1600 1100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .entity { fill: #C8E6C9; stroke: #2E7D32; stroke-width: 3; }
+      .relationship { fill: #FFF59D; stroke: #F57F17; stroke-width: 3; }
+      .attribute { fill: #FFF9C4; stroke: #F57F17; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; fill: #1B5E20; }
+      .small-text { font-family: Arial, sans-serif; font-size: 13px; fill: #1B5E20; }
+      .line { stroke: #2E7D32; stroke-width: 2; fill: none; }
+      .cardinality { font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; fill: #1B5E20; }
+    </style>
+  </defs>
+
+  <!-- Border -->
+  
+  <!-- ========== FACT TABLE: fact_billing (Center) ========== -->
+  <rect x="650" y="450" width="200" height="80" class="entity"/>
+  <text x="750" y="480" text-anchor="middle" class="text">fact_billing</text>
+  <text x="750" y="500" text-anchor="middle" class="small-text">(FACT TABLE)</text>
+
+  <!-- Fact attributes -->
+  <ellipse cx="560" cy="490" rx="60" ry="25" class="attribute"/>
+  <text x="560" y="495" text-anchor="middle" class="small-text">billing_id</text>
+  <line x1="620" y1="490" x2="650" y2="490" class="line"/>
+
+  <ellipse cx="940" cy="490" rx="55" ry="25" class="attribute"/>
+  <text x="940" y="495" text-anchor="middle" class="small-text">cost_usd</text>
+  <line x1="850" y1="490" x2="885" y2="490" class="line"/>
+
+  <ellipse cx="560" cy="530" rx="70" ry="25" class="attribute"/>
+  <text x="560" y="535" text-anchor="middle" class="small-text">account_id</text>
+  <line x1="625" y1="525" x2="650" y2="515" class="line"/>
+
+  <ellipse cx="940" cy="530" rx="70" ry="25" class="attribute"/>
+  <text x="940" y="535" text-anchor="middle" class="small-text">project_id</text>
+  <line x1="875" y1="525" x2="850" y2="515" class="line"/>
+
+  <!-- ========== time (Top Center) ========== -->
+  <rect x="650" y="80" width="200" height="80" class="entity"/>
+  <text x="750" y="120" text-anchor="middle" class="text">time</text>
+
+  <!-- time attributes -->
+  <ellipse cx="560" cy="100" rx="50" ry="25" class="attribute"/>
+  <text x="560" y="105" text-anchor="middle" class="small-text">date_id</text>
+  <line x1="610" y1="105" x2="650" y2="110" class="line"/>
+
+  <ellipse cx="940" cy="100" rx="40" ry="25" class="attribute"/>
+  <text x="940" y="105" text-anchor="middle" class="small-text">date</text>
+  <line x1="900" y1="105" x2="850" y2="110" class="line"/>
+
+  <ellipse cx="560" cy="140" rx="40" ry="25" class="attribute"/>
+  <text x="560" y="145" text-anchor="middle" class="small-text">year</text>
+  <line x1="600" y1="140" x2="650" y2="130" class="line"/>
+
+  <ellipse cx="620" cy="30" rx="50" ry="25" class="attribute"/>
+  <text x="620" y="35" text-anchor="middle" class="small-text">month</text>
+  <line x1="650" y1="50" x2="670" y2="80" class="line"/>
+
+  <ellipse cx="880" cy="30" rx="50" ry="25" class="attribute"/>
+  <text x="880" y="35" text-anchor="middle" class="small-text">quarter</text>
+  <line x1="850" y1="50" x2="830" y2="80" class="line"/>
+
+  <ellipse cx="940" cy="140" rx="70" ry="25" class="attribute"/>
+  <text x="940" y="145" text-anchor="middle" class="small-text">fiscal_year</text>
+  <line x1="890" y1="145" x2="850" y2="135" class="line"/>
+
+  <!-- Relationship: has_date -->
+  <polygon points="750,250 770,280 750,310 730,280" class="relationship"/>
+  <text x="750" y="287" text-anchor="middle" class="small-text">has</text>
+  <line x1="750" y1="160" x2="750" y2="250" class="line"/>
+  <line x1="750" y1="310" x2="750" y2="450" class="line"/>
+  <text x="770" y="190" class="cardinality">1</text>
+  <text x="770" y="430" class="cardinality">M</text>
+
+  <!-- ========== cloud_provider (Top Left) ========== -->
+  <rect x="100" y="150" width="200" height="80" class="entity"/>
+  <text x="200" y="180" text-anchor="middle" class="text">cloud</text>
+  <text x="200" y="200" text-anchor="middle" class="text">_provider</text>
+
+  <!-- cloud_provider attributes -->
+  <ellipse cx="200" cy="100" rx="50" ry="25" class="attribute"/>
+  <text x="200" y="105" text-anchor="middle" class="small-text">cloud_id</text>
+  <line x1="200" y1="125" x2="200" y2="150" class="line"/>
+
+  <ellipse cx="70" cy="250" rx="75" ry="25" class="attribute"/>
+  <text x="70" y="255" text-anchor="middle" class="small-text">cloud_name</text>
+  <line x1="135" y1="240" x2="150" y2="230" class="line"/>
+
+  <ellipse cx="330" cy="250" rx="75" ry="25" class="attribute"/>
+  <text x="330" y="255" text-anchor="middle" class="small-text">description</text>
+  <line x1="270" y1="240" x2="250" y2="230" class="line"/>
+
+  <!-- Relationship: belongs_to_cloud -->
+  <polygon points="400,190 430,210 400,230 370,210" class="relationship"/>
+  <text x="400" y="217" text-anchor="middle" class="small-text">belongs</text>
+  <line x1="300" y1="190" x2="370" y2="210" class="line"/>
+  <line x1="430" y1="210" x2="650" y2="470" class="line"/>
+  <text x="320" y="195" class="cardinality">1</text>
+  <text x="610" y="460" class="cardinality">M</text>
+
+  <!-- ========== service (Top Right) ========== -->
+  <rect x="1200" y="150" width="200" height="80" class="entity"/>
+  <text x="1300" y="190" text-anchor="middle" class="text">service</text>
+
+  <!-- service attributes -->
+  <ellipse cx="1300" cy="100" rx="60" ry="25" class="attribute"/>
+  <text x="1300" y="105" text-anchor="middle" class="small-text">service_id</text>
+  <line x1="1300" y1="125" x2="1300" y2="150" class="line"/>
+
+  <ellipse cx="1100" cy="170" rx="80" ry="25" class="attribute"/>
+  <text x="1100" y="175" text-anchor="middle" class="small-text">service_name</text>
+  <line x1="1180" y1="175" x2="1200" y2="175" class="line"/>
+
+  <ellipse cx="1100" cy="210" rx="95" ry="25" class="attribute"/>
+  <text x="1100" y="215" text-anchor="middle" class="small-text">service_category</text>
+  <line x1="1185" y1="210" x2="1200" y2="205" class="line"/>
+
+  <ellipse cx="1480" cy="170" rx="55" ry="25" class="attribute"/>
+  <text x="1480" y="175" text-anchor="middle" class="small-text">cloud_id</text>
+  <line x1="1425" y1="175" x2="1400" y2="175" class="line"/>
+
+  <!-- Relationship: uses_service -->
+  <polygon points="1100,190 1070,210 1100,230 1130,210" class="relationship"/>
+  <text x="1100" y="217" text-anchor="middle" class="small-text">uses</text>
+  <line x1="1200" y1="190" x2="1130" y2="210" class="line"/>
+  <line x1="1070" y1="210" x2="850" y2="470" class="line"/>
+  <text x="1170" y="195" class="cardinality">1</text>
+  <text x="890" y="460" class="cardinality">M</text>
+
+  <!-- Service to Provider relationship -->
+  <polygon points="600,190 570,210 600,230 630,210" class="relationship"/>
+  <text x="600" y="217" text-anchor="middle" class="small-text">belongs</text>
+  <line x1="300" y1="190" x2="570" y2="210" class="line"/>
+  <line x1="630" y1="210" x2="1200" y2="190" class="line"/>
+  <text x="320" y="195" class="cardinality">1</text>
+  <text x="1170" y="195" class="cardinality">M</text>
+
+  <!-- ========== team (Left Middle) ========== -->
+  <rect x="100" y="450" width="200" height="80" class="entity"/>
+  <text x="200" y="490" text-anchor="middle" class="text">team</text>
+
+  <!-- team attributes -->
+  <ellipse cx="200" cy="400" rx="50" ry="25" class="attribute"/>
+  <text x="200" y="405" text-anchor="middle" class="small-text">team_id</text>
+  <line x1="200" y1="425" x2="200" y2="450" class="line"/>
+
+  <ellipse cx="70" cy="550" rx="75" ry="25" class="attribute"/>
+  <text x="70" y="555" text-anchor="middle" class="small-text">team_name</text>
+  <line x1="135" y1="540" x2="150" y2="530" class="line"/>
+
+  <ellipse cx="330" cy="550" rx="85" ry="25" class="attribute"/>
+  <text x="330" y="555" text-anchor="middle" class="small-text">owner_email</text>
+  <line x1="260" y1="540" x2="250" y2="530" class="line"/>
+
+  <!-- Relationship: has_team -->
+  <polygon points="400,490 430,510 400,530 370,510" class="relationship"/>
+  <text x="400" y="517" text-anchor="middle" class="small-text">has</text>
+  <line x1="300" y1="490" x2="370" y2="510" class="line"/>
+  <line x1="430" y1="510" x2="650" y2="490" class="line"/>
+  <text x="320" y="495" class="cardinality">1</text>
+  <text x="610" y="495" class="cardinality">M</text>
+
+  <!-- ========== environment (Bottom Center) ========== -->
+  <rect x="650" y="700" width="200" height="80" class="entity"/>
+  <text x="750" y="730" text-anchor="middle" class="text"></text>
+  <text x="750" y="750" text-anchor="middle" class="text">environment</text>
+
+  <!-- environment attributes -->
+  <ellipse cx="560" cy="720" rx="55" ry="25" class="attribute"/>
+  <text x="560" y="725" text-anchor="middle" class="small-text">env_id</text>
+  <line x1="615" y1="725" x2="650" y2="725" class="line"/>
+
+  <ellipse cx="940" cy="720" rx="70" ry="25" class="attribute"/>
+  <text x="940" y="725" text-anchor="middle" class="small-text">env_name</text>
+  <line x1="885" y1="725" x2="850" y2="725" class="line"/>
+
+  <ellipse cx="750" cy="830" rx="55" ry="25" class="attribute"/>
+  <text x="750" y="835" text-anchor="middle" class="small-text">env_type</text>
+  <line x1="750" y1="810" x2="750" y2="780" class="line"/>
+
+  <!-- Relationship: has_environment -->
+  <polygon points="750,610 770,640 750,670 730,640" class="relationship"/>
+  <text x="750" y="647" text-anchor="middle" class="small-text">has</text>
+  <line x1="750" y1="530" x2="750" y2="610" class="line"/>
+  <line x1="750" y1="670" x2="750" y2="700" class="line"/>
+  <text x="770" y="560" class="cardinality">M</text>
+  <text x="770" y="690" class="cardinality">1</text>
+
+  <!-- ========== aws_account (Bottom Left) ========== -->
+  <rect x="100" y="700" width="200" height="80" class="entity"/>
+  <text x="200" y="730" text-anchor="middle" class="text">aws</text>
+  <text x="200" y="750" text-anchor="middle" class="text">_account</text>
+
+  <!-- aws_account attributes -->
+  <ellipse cx="200" cy="650" rx="70" ry="25" class="attribute"/>
+  <text x="200" y="655" text-anchor="middle" class="small-text">account_id</text>
+  <line x1="200" y1="675" x2="200" y2="700" class="line"/>
+
+  <ellipse cx="70" cy="800" rx="85" ry="25" class="attribute"/>
+  <text x="70" y="805" text-anchor="middle" class="small-text">account_name</text>
+  <line x1="140" y1="790" x2="150" y2="780" class="line"/>
+
+  <ellipse cx="330" cy="800" rx="75" ry="25" class="attribute"/>
+  <text x="330" y="805" text-anchor="middle" class="small-text">cost_center</text>
+  <line x1="270" y1="790" x2="250" y2="780" class="line"/>
+
+  <!-- Relationship: has_aws_account -->
+  <polygon points="400,580 430,600 400,620 370,600" class="relationship"/>
+  <text x="400" y="607" text-anchor="middle" class="small-text">has</text>
+  <line x1="250" y1="700" x2="370" y2="600" class="line"/>
+  <line x1="430" y1="600" x2="650" y2="510" class="line"/>
+  <text x="280" y="650" class="cardinality">1</text>
+  <text x="610" y="515" class="cardinality">M</text>
+
+  <!-- ========== gcp_project (Bottom Right) ========== -->
+  <rect x="1200" y="700" width="200" height="80" class="entity"/>
+  <text x="1300" y="730" text-anchor="middle" class="text">gcp</text>
+  <text x="1300" y="750" text-anchor="middle" class="text">_project</text>
+
+  <!-- gcp_project attributes -->
+  <ellipse cx="1300" cy="650" rx="65" ry="25" class="attribute"/>
+  <text x="1300" y="655" text-anchor="middle" class="small-text">project_id</text>
+  <line x1="1300" y1="675" x2="1300" y2="700" class="line"/>
+
+  <ellipse cx="1100" cy="720" rx="85" ry="25" class="attribute"/>
+  <text x="1100" y="725" text-anchor="middle" class="small-text">project_name</text>
+  <line x1="1180" y1="725" x2="1200" y2="725" class="line"/>
+
+  <ellipse cx="1480" cy="720" rx="75" ry="25" class="attribute"/>
+  <text x="1480" y="725" text-anchor="middle" class="small-text">cost_center</text>
+  <line x1="1410" y1="725" x2="1400" y2="725" class="line"/>
+
+  <!-- Relationship: has_gcp_project -->
+  <polygon points="1100,580 1070,600 1100,620 1130,600" class="relationship"/>
+  <text x="1100" y="607" text-anchor="middle" class="small-text">has</text>
+  <line x1="1250" y1="700" x2="1130" y2="600" class="line"/>
+  <line x1="1070" y1="600" x2="850" y2="510" class="line"/>
+  <text x="1220" y="650" class="cardinality">1</text>
+  <text x="890" y="515" class="cardinality">M</text>
+
+  <!-- Title -->
+  <text x="800" y="960" text-anchor="middle" style="font-family: Arial; font-size: 24px; font-weight: bold; fill: #1B5E20;">Multi-Cloud Billing - ER Diagram</text>
+</svg>
