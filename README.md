@@ -81,13 +81,13 @@ Optimized for FinOps cost reporting.
 - `cloud_provider` + `project/account` + `service` + `team` + `environment` + `date`
 
 **Dimensions include:**
-- `dim_time`
-- `dim_cloud_provider`
-- `dim_service`
-- `dim_team`
-- `dim_environment`
-- `dim_aws_account`
-- `dim_gcp_project`
+- `time`
+- `cloud_provider`
+- `service`
+- `team`
+- `environment`
+- `aws_account`
+- `gcp_project`
 
 **Supports:**
 - Multi-cloud normalization
