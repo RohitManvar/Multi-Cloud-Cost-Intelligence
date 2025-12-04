@@ -142,6 +142,3 @@ No corresponding workload growth
 
 ---
 
-## 📬 Contact
-
-**Rohit Manvar**
